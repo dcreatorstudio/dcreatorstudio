@@ -1,0 +1,31 @@
+name: Sync /build/web to /docs
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout this repo
+      uses: actions/checkout@v2
+      with:
+        path: 'this-repo'
+
+    - name: Clone DCreatorProjects/DCreatorStudio
+      run: git clone https://github.com/DCreatorProjects/DCreatorStudio.git external-repo
+
+    - name: Copy files from /build/web to /docs
+      run: |
+        mkdir -p this-repo/docs
+        cp -r external-repo/build/web/* this-repo/docs/
+
+    - name: Push changes
+      run: |
+        cd this-repo
+        git config --global user.name 'xtremecorecom'
+        git config --global user.email 'xtremecorecomputer@gmail.com'
+        git add docs
+        git commit -m "Update /docs from /build/web"
+        git push
