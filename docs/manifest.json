@@ -1,11 +1,11 @@
 {
-    "name": "D'Creator - Connect to people",
-    "short_name": "D'Creator Website",
+    "name": "D-Creator - Connect to people",
+    "short_name": "D-Creator",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A coding and creative agency to build connect with people.",
+    "description": "We offer website design, logo design, mobile app development, branding and digital marketing services.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
