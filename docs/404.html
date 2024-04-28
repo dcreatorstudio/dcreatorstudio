@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0; url=/" />
+</head>
+<body>
+  <script>
+    var l = window.location;
+    document.write('Redirecting...');
+    var redirectPath = l.pathname + l.search + l.hash;
+    sessionStorage.setItem('redirectPath', redirectPath);
+    window.location.replace('/');
+  </script>
+</body>
+</html>
